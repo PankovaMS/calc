@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Syne:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper overpass-500">
+      <p>Калькулятор по вкладам</p>
+      <div class="calc">
+        <p>
+          <label for="termInMonths" class="m-20">Срок вклада:</label>
+          <input
+            id="months"
+            type="number"
+            min="1"
+            max="120"
+            placeholder="от 1 до 120 месяцев"
+            required
+            step="1"
+            pattern="^(?:[1-9]|[1-9]\d|1[0-1]\d|120)$"
+          />
+        </p>
+        <p>
+          <label for="interestRate">Процентная ставка (%):</label>
+          <input
+            id="rate"
+            type="number"
+            min="1"
+            max="99"
+            size="2"
+            placeholder="от 1 до 40"
+            required
+            step="1"
+            pattern="^(?:[1-9]|[1-9]\d)$"
+          />
+        </p>
+        <p>
+          <label for="principal">Сумма вклада:</label>
+          <input
+            id="sum"
+            type="number"
+            min="1000"
+            max="10000000"
+            placeholder="от 1000р до 10 000 000 р"
+            required
+            step="1000"
+            pattern="^(?:[1-9]\d{3,6}|10000000)$"
+          />
+        </p>
+      </div>
+      <button class="btn">Рассчитать</button>
+      <p>
+        <label for="">Доход общий:</label>
+        <output id="totalIncome"></output>
+      </p>
+      <p>
+        <label for="">Доход ежемесячный:</label>
+        <output id="monthlyIncome"></output>
+      </p>
+    </div>
+
+    <script src="calc.js"></script>
+  </body>
+</html>
