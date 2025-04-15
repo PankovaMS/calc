@@ -12,9 +12,9 @@ let totalIncome = 0;
 let monthlyIncome = 0;
 
 function calc () {
-    let month = parseFloat(document.querySelector('#months').value);
+    let month = parseInt(document.querySelector('#months').value);
     let rate = parseInt(document.querySelector('#rate').value);
-    let sum = parseFloat(document.querySelector('#sum').value);
+    let sum = parseInt(document.querySelector('#sum').value);
 // валидация
     if (isNaN(month) || month < 1 || month > 120 || !Number.isInteger(month)) {
         alert("Срок вклада должен быть от 1 до 120 месяцев.");
