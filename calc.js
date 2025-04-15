@@ -37,7 +37,6 @@ function calc () {
     }
     if (sum >= 1400000) {
         alert('Осторожно: вклад не застрахован государством!');
-        return;
     }
     console.log(monthlyIncome, totalIncome);
 
