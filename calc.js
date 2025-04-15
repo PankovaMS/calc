@@ -16,17 +16,17 @@ function calc () {
     let rate = document.querySelector('#rate').value;
     let sum = parseFloat(document.querySelector('#sum').value);
 // валидация
-    if (isNaN(month) || month < 1 || month > 120) {
+    if (isNaN(month) || month < 1 || month > 120 || !Number.isInteger(month)) {
         alert("Срок вклада должен быть от 1 до 120 месяцев.");
         return;
       }
 
-    if (isNaN(rate) || rate < 1 || rate > 40) {
+    if (isNaN(rate) || rate < 1 || rate > 40 || !Number.isInteger(rate)) {
         alert("Процентная ставка должна быть от 1 до 40 %.");
         return;
     }  
 
-    if (isNaN(sum) || sum < 1000 || sum > 10000000) {
+    if (isNaN(sum) || sum < 1000 || sum > 10000000 || !Number.isInteger(sum)) {
         alert("Сумма вклада должна быть от 1000 до 10000000.");
         return;
     }
