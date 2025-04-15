@@ -15,6 +15,21 @@ function calc () {
     let month = parseFloat(document.querySelector('#months').value);
     let rate = document.querySelector('#rate').value;
     let sum = parseFloat(document.querySelector('#sum').value);
+// валидация
+    if (isNaN(month) || month < 1 || month > 120) {
+        alert("Срок вклада должен быть от 1 до 120 месяцев.");
+        return;
+      }
+
+    if (isNaN(rate) || rate < 1 || rate > 40) {
+        alert("Процентная ставка должна быть от 1 до 40 %.");
+        return;
+    }  
+
+    if (isNaN(sum) || sum < 1000 || sum > 10000000) {
+        alert("Сумма вклада должна быть от 1000 до 10000000.");
+        return;
+    }
 
     if (sum > 0) {
        monthlyIncome = sum * rate / 100 / 12;
