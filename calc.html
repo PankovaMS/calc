@@ -20,12 +20,12 @@
           <label for="months" class="m-20">Срок вклада:</label>
           <input
             id="months"
-            type="number"
+            type="text"
             min="1"
             max="120"
             placeholder="от 1 до 120 месяцев"
             required
-            step="1"
+            step="0.01"
             autocomplete="off"
           >
         </p>
@@ -33,13 +33,13 @@
           <label for="rate">Процентная ставка (%):</label>
           <input
             id="rate"
-            type="number"
+            type="text"
             min="1"
             max="40"
             size="2"
             placeholder="от 1 до 40"
             required
-            step="1"
+            step="0.01"
             autocomplete="off"
           >
         </p>
@@ -47,7 +47,7 @@
           <label for="sum">Сумма вклада:</label>
           <input
             id="sum"
-            type="number"
+            type="text"
             min="1000"
             max="10000000"
             placeholder="от 1000р до 10 000 000 р"
