@@ -1,26 +1,5 @@
 let totalIncome = 0;
 let monthlyIncome = 0;
-
-// document.querySelectorAll('input').forEach(input => {
-//     input.addEventListener('input', function() {
-//       // Разрешаем только цифры, точку и запятую:
-//       this.value = this.value.replace(/[^0-9.,]/g, '');
-      
-//       // Заменяем все запятые на точки, чтобы использовать единый разделитель:
-//       this.value = this.value.replace(/,/g, '.');
-  
-//       // Если пользователь ввёл более одной точки, оставляем только первую:
-//       let parts = this.value.split('.');
-//       if (parts.length > 2) {
-//         this.value = parts[0] + '.' + parts.slice(1).join('');
-//       }
-  
-//       // Ограничиваем количество цифр после точки до двух
-//       if (this.value.includes('.') && /\.\d{3,}/.test(this.value)) {
-//         this.value = this.value.replace(/(\.\d{2})\d+/, '$1');
-//       }
-//     });
-//   });
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', (e) => {
         const input = e.target;
