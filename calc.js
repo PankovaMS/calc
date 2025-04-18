@@ -16,7 +16,7 @@ limitInput('#sum', /^\d{0,8}/);                 // 4–8 цифр
 function calc () {
     let month = Number(document.querySelector('#months').value);
     let rate  = Number(document.querySelector('#rate').value);
-    let sum   = Number(document.querySelector('#sum').valueы);
+    let sum   = Number(document.querySelector('#sum').value);
 // валидация
 if (isNaN(month) || month < 1 || month > 120) {
     alert("Срок вклада должен быть от 1 до 120 месяцев.");
