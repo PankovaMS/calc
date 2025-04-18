@@ -1,17 +1,22 @@
 let totalIncome = 0;
 let monthlyIncome = 0;
-document.querySelectorAll('input').forEach(input => {
-    input.addEventListener('input', (e) => {
-        const input = e.target;
-        const value = input.value.replace(/[^0-9.]/g, '');
-        const match = value.match(/^\d*(\.?\d{0,2})?/);
-        input.value = match?.[0] || '';
-      });
+
+function limitInput(selector, pattern) {
+  document.querySelector(selector).addEventListener('input', (e) => {
+    const input = e.target;
+    const value = input.value.replace(/[^0-9.]/g, '');
+    const match = value.match(pattern);
+    input.value = match?.[0] || '';
   });
+}
+
+limitInput('#months', /^\d{1,3}/);  // до 3 цифр
+limitInput('#rate', /^\d{1,2}(\.\d{0,2})?/);    // до 2 цифр + до 2 после точки
+limitInput('#sum', /^\d{0,8}/);                 // 4–8 цифр
 function calc () {
-    let month = Number(document.querySelector('#months').value, 10);
-    let rate  = Number(document.querySelector('#rate').value, 10);
-    let sum   = Number(document.querySelector('#sum').value, 10);
+    let month = Number(document.querySelector('#months').value);
+    let rate  = Number(document.querySelector('#rate').value);
+    let sum   = Number(document.querySelector('#sum').valueы);
 // валидация
 if (isNaN(month) || month < 1 || month > 120) {
     alert("Срок вклада должен быть от 1 до 120 месяцев.");
@@ -30,7 +35,7 @@ if (isNaN(month) || month < 1 || month > 120) {
 
 
     if (sum > 0) {
-        monthlyIncome = sum * rate / 100 / 12;
+        monthlyIncome = (totalIncome - sum) / month;
         totalIncome = sum * Math.pow((1 + rate / 100 / 12), month);
     }
     if (sum >= 1400000) {
