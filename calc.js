@@ -35,8 +35,8 @@ if (isNaN(month) || month < 1 || month > 120) {
 
 
     if (sum > 0) {
-        monthlyIncome = (totalIncome - sum) / month;
         totalIncome = sum * Math.pow((1 + rate / 100 / 12), month);
+        monthlyIncome = (totalIncome - sum) / month;
     }
     if (sum >= 1400000) {
         alert('Осторожно: вклад не застрахован государством!');
